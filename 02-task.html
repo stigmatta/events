@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+</head>
+
+<body>
+    <form onsubmit="submitHandler(event)">
+        <input type="text" id="radiusInput" placeholder="Введите радиус">
+        <input type="text" id="heightInput" placeholder="Введите высоту">
+        <br>
+        <br>
+        <input type="submit" id="subInput">
+        <div style="margin: 0 auto;" id="resultDiv"></div>
+    </form>
+
+    <script>
+        function submitHandler(event) {
+            event.preventDefault(); //чтоб не перезагружалось
+            var radius = Number(document.getElementById("radiusInput").value);
+            var height = Number(document.getElementById("heightInput").value);
+            var result = document.getElementById("resultDiv");
+            result.textContent = "Объем цилиндра: " + volume(radius, height);
+        }
+
+        function volume(r, he) {
+            return Math.PI * Math.pow(r, 2) * he;
+        }
+    </script>
+</body>
+
+</html>
